@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('codes', function (Blueprint $table) {
             $table->id();
+            $table->text('content');
+            $table->boolean('is_favorite');
+            $table->string('language');
+            $table->string('description');
+            $table->foreignId('proyect_id');
             $table->timestamps();
         });
     }
