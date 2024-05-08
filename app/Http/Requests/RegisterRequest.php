@@ -11,7 +11,7 @@ class RegisterRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -39,7 +39,7 @@ class RegisterRequest extends FormRequest
             '*.string' => 'El campo solo debe contener texto.',
             '*.email' => 'El correo no tiene el formato correcto',
             'email.max' => 'El correo electrónico debe ser más corto.',
-            'email.unique' => 'El correo electrónico proporsionado ya ha sido utilizado.'
+            'email.unique' => 'El correo electrónico proporcionado ya ha sido utilizado.'
         ];
     }
 }
