@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\Collection\CodeCollection;
+use App\Http\Resources\Collections\CodeCollection;
 use App\Models\Code;
 use Illuminate\Http\Request;
 
