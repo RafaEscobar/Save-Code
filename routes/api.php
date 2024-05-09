@@ -14,4 +14,5 @@ Route::resource('/proyects', ProyectController::class)->only(['index']);
 Route::resource('/codes', CodeController::class)->only(['index']);
 Route::controller(AuthController::class)->group(function() {
     Route::post('register', 'register')->name('auth.register');
+    Route::post('login', 'login')->name('auth.login');
 });
