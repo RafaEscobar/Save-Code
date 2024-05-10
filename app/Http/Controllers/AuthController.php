@@ -7,8 +7,6 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-use function PHPUnit\Framework\isNull;
-
 class AuthController extends Controller
 {
     public function register(RegisterRequest $request)
@@ -50,5 +48,14 @@ class AuthController extends Controller
             'user' => $user,
             'token' => $token
         ]]);
+    }
+
+    public function logout()
+    {
+        Auth::user()->tokens()->delete();
+        return response()->json([
+            'message' => 'Sesión cerrada',
+            'status' => 'success'
+        ]);
     }
 }
