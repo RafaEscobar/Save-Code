@@ -10,7 +10,7 @@ class ProyectController extends Controller
 {
     public function index()
     {
-        $proyects = Proyect::all();
+        $proyects = Proyect::with('codes')->get();
         return new ProyectCollection($proyects);
     }
 }
