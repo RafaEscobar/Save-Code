@@ -18,7 +18,7 @@ class ProyectFactory extends Factory
     {
         return [
             'name' => fake()->words(3),
-            'description' => fake()->word(5),
+            'description' => fake()->words(5),
             'user_id' => 10,
         ];
     }

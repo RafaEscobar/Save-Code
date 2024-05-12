@@ -17,7 +17,7 @@ class CodeFactory extends Factory
     public function definition(): array
     {
         return [
-            'content' => fake()->randomHtml(2,3),
+            'content' => fake()->word(),
             'is_favorite' => fake()->boolean(),
             'language' => fake()->word(),
             'description' => fake()->words(8),
