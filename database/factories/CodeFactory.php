@@ -17,10 +17,10 @@ class CodeFactory extends Factory
     public function definition(): array
     {
         return [
-            'content' => fake()->word(),
+            'content' => fake()->randomHtml(2,3),
             'is_favorite' => fake()->boolean(),
             'language' => fake()->word(),
-            'description' => fake()->words(8),
+            'description' => fake()->sentence(6),
             'proyect_id' => fake()->numberBetween(1, 5),
         ];
     }
