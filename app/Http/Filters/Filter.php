@@ -26,7 +26,7 @@ class Filter {
             foreach ($operators as $operator) {
                 if (isset($query[$operator])) {
                     $value = ($operator !== 'li') ? $query[$operator] : "%$query[$operator]%";
-                    $q = [$param, $this->operatorAliases[$operator], $value];
+                    $q[] = [$param, $this->operatorAliases[$operator], $value];
                 }
             }
         }
@@ -64,7 +64,7 @@ class Filter {
             foreach ($operators as $operator) { //! operator: "eq"
                 if (isset($query[$operator])) { //! true -> entra al if
                     $value = ($operator !== 'li') ? $query[$operator] : "%$query[$operator]%"; //! value: 1
-                    $q = [$param, $this->operatorAliases[$operator], $value]; //! q: "user_id", =, 1
+                    $q[] = [$param, $this->operatorAliases[$operator], $value]; //! q: "user_id", =, 1
                 }
             }
         }
