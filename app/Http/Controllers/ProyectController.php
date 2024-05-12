@@ -12,7 +12,9 @@ class ProyectController extends Controller
     public function index(Request $request)
     {
         $filter = new ProyectFilter();
-        $proyects = Proyect::with('codes')->where($filter->buildQuery($request));
+        $proyects = Proyect::where($filter->buildQuery($request))->when(isset($request->withCodes), function($query){
+            return $query->with('codes');
+        });
         return new ProyectCollection($proyects->paginate(10)->appends($request->query()));
     }
 }
