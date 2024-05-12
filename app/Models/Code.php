@@ -16,4 +16,9 @@ class Code extends Model
         'description',
         'proyect_id'
     ];
+
+    public function proyect()
+    {
+        return $this->belongsTo(Proyect::class);
+    }
 }
